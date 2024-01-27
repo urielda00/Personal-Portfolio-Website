@@ -1,0 +1,69 @@
+.about-animated-text {
+	font-weight: 700;
+	color: #eef5ff;
+	padding-top: 150px;
+}
+
+.about-animated-text2 {
+	color: #eef5ff;
+}
+
+.about-animated-text span:hover {
+	color: #4cb9e7;
+	transform: translateY(-5px);
+}
+
+.text-wrapper {
+	opacity: 1;
+	transform: translateX(-10%);
+	transition: opacity 2s, transform 1s;
+}
+
+.fade {
+	animation: fadeInOut 1.8s infinite;
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.sliderContainer {
+	top: 50px;
+	overflow: hidden;
+	position: relative;
+	white-space: nowrap;
+}
+
+.slider {
+	display: inline-block;
+	animation: 20s slide infinite linear;
+}
+
+.sliderContainer::before,
+.sliderContainer::after {
+	top: 0;
+	z-index: 2;
+	content: '';
+	width: 250px;
+	height: 100%;
+	position: absolute;
+}
+
+.sliderContainer::before {
+	left: 0;
+	background: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(24, 23, 23));
+}
+
+.sliderContainer::after {
+	right: 0;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(21, 19, 19));
+}
+
+.sliderContainer:hover .slider {
+	animation-play-state: paused;
+}
